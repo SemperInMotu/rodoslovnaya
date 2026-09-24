@@ -65,21 +65,22 @@ const UI = {
 };
 
 const LANG_KEY = 'heritavia-lang';
-/* Russian is the default locale at `/`. English lives under `/en/`. */
-const LANG_PATH = { ru: '/', en: '/en/', be: '/be/' };
+/* English is the default at `/`. Russian and Belarusian live on родословная.бел. */
+const BEL_ORIGIN = 'https://xn--80adf2alcbbnn3n.xn--90ais';
+const LANG_PATH = { ru: `${BEL_ORIGIN}/ru/`, en: '/', be: `${BEL_ORIGIN}/` };
 const HINT = {
-  en: ['This site is also available in English', 'Switch'],
+  ru: ['Сайт также доступен на русском', 'Перейти'],
   be: ['Сайт даступны па-беларуску', 'Перайсьці'],
 };
 
 export function detectLang() {
   const m = window.location.pathname.match(/^\/(en|be|ru)(?=\/|$)/);
-  if (!m) return 'ru';
-  return m[1] === 'ru' ? 'ru' : m[1];
+  if (!m) return 'en';
+  return m[1];
 }
 
 function localePrefix(lang) {
-  if (lang === 'ru') return '';
+  if (lang === 'en') return '';
   return `/${lang}`;
 }
 
@@ -125,10 +126,9 @@ function stripLocale(pathname) {
 
 function siblingLangUrl(targetLang) {
   const rest = stripLocale(window.location.pathname);
-  if (targetLang === 'ru') {
-    return rest.endsWith('/') || rest.endsWith('.html') ? rest : `${rest}/`;
-  }
-  return `/${targetLang}${rest}`;
+  if (targetLang === 'be') return `${BEL_ORIGIN}${rest === '/' ? '/' : rest}`;
+  if (targetLang === 'ru') return rest === '/' ? `${BEL_ORIGIN}/ru/` : `${BEL_ORIGIN}/ru${rest}`;
+  return rest === '/' ? '/' : rest;
 }
 
 function remember(lang) {
@@ -141,8 +141,8 @@ function remember(lang) {
 
 function langSwitcher(lang) {
   const items = [
-    { code: 'ru', label: 'RU' },
     { code: 'en', label: 'EN' },
+    { code: 'ru', label: 'RU' },
     { code: 'be', label: 'BE' },
   ];
   return `
@@ -171,7 +171,7 @@ function maybeRedirectByLocale() {
   const forced = params.get('lang');
   if (forced && LANG_PATH[forced]) {
     remember(forced);
-    if (forced !== 'ru') {
+    if (forced !== 'en') {
       window.location.replace(LANG_PATH[forced] + window.location.hash);
       return;
     }
@@ -184,7 +184,7 @@ function maybeRedirectByLocale() {
     stored = null;
   }
 
-  if (stored && stored !== 'ru' && LANG_PATH[stored]) {
+  if (stored && stored !== 'en' && LANG_PATH[stored]) {
     window.location.replace(LANG_PATH[stored] + window.location.hash);
     return;
   }
@@ -195,19 +195,25 @@ function maybeRedirectByLocale() {
       : [navigator.language || '']
   ).map((tag) => tag.toLowerCase());
 
-  const prefersEn = tags.some((tag) => tag.startsWith('en')) && !tags.some((tag) => tag.startsWith('ru') || tag.startsWith('be'));
-  if (stored || !prefersEn) return;
+  const prefersRu =
+    tags.some((tag) => tag.startsWith('ru')) &&
+    !tags.some((tag) => tag.startsWith('en'));
+  const prefersBe =
+    tags.some((tag) => tag.startsWith('be')) &&
+    !tags.some((tag) => tag.startsWith('en'));
+  if (stored || (!prefersRu && !prefersBe)) return;
 
+  const hintLang = prefersBe ? 'be' : 'ru';
   const hint = document.querySelector('[data-lang-hint]');
-  if (!hint || !HINT.en) return;
-  const [text, action] = HINT.en;
+  if (!hint || !HINT[hintLang]) return;
+  const [text, action] = HINT[hintLang];
   const textEl = hint.querySelector('[data-lang-hint-text]');
   const go = hint.querySelector('[data-lang-hint-go]');
   if (textEl) textEl.textContent = text;
   if (go) {
     go.textContent = action;
-    go.href = LANG_PATH.en;
-    go.addEventListener('click', () => remember('en'));
+    go.href = LANG_PATH[hintLang];
+    go.addEventListener('click', () => remember(hintLang));
   }
   hint.querySelector('[data-lang-hint-close]')?.addEventListener('click', () => {
     hint.hidden = true;
@@ -231,7 +237,7 @@ function wireFormStatus(t) {
 
 export function mountChrome({ current = '' } = {}) {
   const lang = detectLang();
-  const t = UI[lang] || UI.ru;
+  const t = UI[lang] || UI.en;
   const header = document.querySelector('[data-site-header]');
   const footer = document.querySelector('[data-site-footer]');
 
@@ -245,7 +251,6 @@ export function mountChrome({ current = '' } = {}) {
       <div class="wrap site-header__inner">
         <a class="brand" href="${href('home', lang)}">Heritavia</a>
         <div class="header-tools">
-          ${langSwitcher(lang)}
           <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">${t.menu}</button>
         </div>
         <nav class="nav" id="site-nav">
@@ -300,6 +305,7 @@ export function mountChrome({ current = '' } = {}) {
           </div>
         </div>
         <div class="footer-bottom">
+          ${langSwitcher(lang)}
           <span>© ${new Date().getFullYear()} Heritavia</span>
           <span>${t.unp}</span>
         </div>
