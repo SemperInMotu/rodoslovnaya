@@ -1,26 +1,25 @@
-import { headers } from 'next/headers';
 import { notFound } from 'next/navigation';
 import { SiteShell } from '../../components/SiteShell';
-import { loadPage } from '../../lib/content';
-import { isBelHost } from '../../lib/hosts';
+import { listPages, loadPage } from '../../lib/content';
 
-async function locale() {
-  const host = (await headers()).get('host');
-  return isBelHost(host) ? 'be' : 'en';
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return listPages('be').map((file) => ({
+    slug: file === 'index.html' ? [] : [file.replace(/\.html$/, '')],
+  }));
 }
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  const page = loadPage(await locale(), slug);
+  const page = loadPage('be', slug);
   if (!page) return {};
   return { title: page.title, description: page.description };
 }
 
 export default async function Page({ params }) {
   const { slug } = await params;
-  const page = loadPage(await locale(), slug);
+  const page = loadPage('be', slug);
   if (!page) notFound();
-  return (
-    <SiteShell locale={await locale()} current={page.current} file={page.file} html={page.html} />
-  );
+  return <SiteShell locale="be" current={page.current} file={page.file} html={page.html} />;
 }
