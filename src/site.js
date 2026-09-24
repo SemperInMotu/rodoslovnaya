@@ -107,6 +107,11 @@ function personalUrl(lang) {
   return 'https://vitalykhoruzhko.com';
 }
 
+function instagramUrl(lang) {
+  if (lang === 'en') return 'https://www.instagram.com/h.e.r.i.t.a.v.i.a/';
+  return 'https://www.instagram.com/heritavia_genealogy/';
+}
+
 /* Belarusian copy follows тарашкевіца, matching vitalykhoruzhko.com. The variant
    subtag is valid BCP-47 for the lang attribute, but hreflang stays plain "be" —
    Google only parses language[-REGION] there. */
@@ -287,8 +292,8 @@ export function mountChrome({ current = '' } = {}) {
             <h4>${t.contactCol}</h4>
             <ul>
               <li><a href="mailto:info@vitalykhoruzhko.com">info@vitalykhoruzhko.com</a></li>
-              <li><a href="https://wa.me/375296757858" rel="noopener">WhatsApp</a></li>
-              <li><a href="https://t.me/N_FT210993" rel="noopener">Telegram</a></li>
+              <li><a href="https://t.me/Heritavia" rel="noopener">Telegram</a></li>
+              <li><a href="${instagramUrl(lang)}" rel="noopener" target="_blank">Instagram</a></li>
               <li>${page('start', t.formLink)}</li>
               <li><a href="${personalUrl(lang)}">${t.author}</a></li>
             </ul>
