@@ -12,7 +12,7 @@ Two language front doors, one business. **Next.js static export only** (Vite rem
 `x-default` and English canonicals → heritavia.com.  
 RU/BE canonicals → родословная.бел. Each page’s `canonical` is self.
 
-GitHub Pages workflow deploys the **bel** build by default.
+GitHub Pages: repo `SemperInMotu/heritavia` runs `build:com` (EN); repo `SemperInMotu/rodoslovnaya` runs `build` (BE+RU).
 
 ## Source of truth
 

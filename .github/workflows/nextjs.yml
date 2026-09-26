@@ -1,4 +1,6 @@
-# Sample workflow for building and deploying a Next.js site to GitHub Pages
+# Deploy static Next.js export to GitHub Pages.
+# heritavia.com  → SITE=com (English)
+# родословная.бел → SITE=bel (BE + /ru/) when this workflow runs in SemperInMotu/rodoslovnaya
 name: Deploy Next.js site to Pages
 
 on:
@@ -40,8 +42,15 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
       - name: Install dependencies
         run: npm ci
-      - name: Build родословная.бел (BE + RU)
-        run: npm run build
+      - name: Build site for this host
+        run: |
+          if [ "${{ github.repository }}" = "SemperInMotu/heritavia" ]; then
+            echo "Building heritavia.com (EN)"
+            npm run build:com
+          else
+            echo "Building родословная.бел (BE + RU)"
+            npm run build
+          fi
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
