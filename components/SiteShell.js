@@ -92,7 +92,7 @@ export function SiteShell({ locale, current, file, html }) {
               <h4>{t.contactCol}</h4>
               <ul>
                 <li>
-                  <a href="mailto:info@vitalykhoruzhko.com">info@vitalykhoruzhko.com</a>
+                  <a href="mailto:info@heritavia.com">info@heritavia.com</a>
                 </li>
                 <li>
                   <a href="https://t.me/Heritavia" rel="noopener">

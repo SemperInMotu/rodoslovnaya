@@ -296,7 +296,7 @@ export function mountChrome({ current = '' } = {}) {
           <div class="footer-col">
             <h4>${t.contactCol}</h4>
             <ul>
-              <li><a href="mailto:info@vitalykhoruzhko.com">info@vitalykhoruzhko.com</a></li>
+              <li><a href="mailto:info@heritavia.com">info@heritavia.com</a></li>
               <li><a href="https://t.me/Heritavia" rel="noopener">Telegram</a></li>
               <li><a href="${instagramUrl(lang)}" rel="noopener" target="_blank">Instagram</a></li>
               <li>${page('start', t.formLink)}</li>
