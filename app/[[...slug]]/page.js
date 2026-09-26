@@ -1,25 +1,35 @@
 import { notFound } from 'next/navigation';
 import { SiteShell } from '../../components/SiteShell';
-import { listPages, loadPage } from '../../lib/content';
+import { listSlugParams, loadPage } from '../../lib/content';
+import { rootLocale } from '../../lib/site-mode';
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return listPages('be').map((file) => ({
-    slug: file === 'index.html' ? [] : [file.replace(/\.html$/, '')],
-  }));
+  return listSlugParams(rootLocale).map(({ slug }) => ({ slug }));
 }
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  const page = loadPage('be', slug);
+  const page = loadPage(rootLocale, slug);
   if (!page) return {};
-  return { title: page.title, description: page.description };
+  return {
+    title: page.title,
+    description: page.description,
+    alternates: {
+      canonical: page.canonical,
+      languages: Object.fromEntries(
+        page.alternates.filter((a) => a.hreflang !== 'x-default').map((a) => [a.hreflang, a.href]),
+      ),
+    },
+  };
 }
 
 export default async function Page({ params }) {
   const { slug } = await params;
-  const page = loadPage('be', slug);
+  const page = loadPage(rootLocale, slug);
   if (!page) notFound();
-  return <SiteShell locale="be" current={page.current} file={page.file} html={page.html} />;
+  return (
+    <SiteShell locale={rootLocale} current={page.current} pageId={page.pageId} html={page.html} />
+  );
 }

@@ -4,14 +4,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "dev:vite": "vite",
-    "build:vite": "vite build"
-  },
-  "devDependencies": {
-    "vite": "^7.1.0"
+    "dev": "node scripts/run-dev.mjs bel",
+    "dev:com": "node scripts/run-dev.mjs com",
+    "build": "node scripts/run-build.mjs bel",
+    "build:com": "node scripts/run-build.mjs com",
+    "sitemap": "node scripts/gen-sitemap.mjs",
+    "start": "next start"
   },
   "dependencies": {
     "next": "^15.5.26",

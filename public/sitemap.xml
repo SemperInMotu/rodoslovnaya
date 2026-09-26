@@ -10,92 +10,92 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://heritavia.com/research.html</loc>
-      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.com/research.html" />
-      <xhtml:link rel="alternate" hreflang="ru" href="https://xn--80adf2alcbbnn3n.xn--90ais/ru/research.html" />
-      <xhtml:link rel="alternate" hreflang="be" href="https://xn--80adf2alcbbnn3n.xn--90ais/research.html" />
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.com/research.html" />
+    <loc>https://heritavia.com/research/</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.com/research/" />
+      <xhtml:link rel="alternate" hreflang="ru" href="https://xn--80adf2alcbbnn3n.xn--90ais/ru/poisk-predkov/" />
+      <xhtml:link rel="alternate" hreflang="be" href="https://xn--80adf2alcbbnn3n.xn--90ais/poshuk-prodkau/" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.com/research/" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://heritavia.com/report.html</loc>
-      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.com/report.html" />
-      <xhtml:link rel="alternate" hreflang="ru" href="https://xn--80adf2alcbbnn3n.xn--90ais/ru/report.html" />
-      <xhtml:link rel="alternate" hreflang="be" href="https://xn--80adf2alcbbnn3n.xn--90ais/report.html" />
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.com/report.html" />
+    <loc>https://heritavia.com/report/</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.com/report/" />
+      <xhtml:link rel="alternate" hreflang="ru" href="https://xn--80adf2alcbbnn3n.xn--90ais/ru/otchet/" />
+      <xhtml:link rel="alternate" hreflang="be" href="https://xn--80adf2alcbbnn3n.xn--90ais/spravazdacha/" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.com/report/" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://heritavia.com/about.html</loc>
-      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.com/about.html" />
-      <xhtml:link rel="alternate" hreflang="ru" href="https://xn--80adf2alcbbnn3n.xn--90ais/ru/about.html" />
-      <xhtml:link rel="alternate" hreflang="be" href="https://xn--80adf2alcbbnn3n.xn--90ais/about.html" />
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.com/about.html" />
+    <loc>https://heritavia.com/about/</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.com/about/" />
+      <xhtml:link rel="alternate" hreflang="ru" href="https://xn--80adf2alcbbnn3n.xn--90ais/ru/o-proekte/" />
+      <xhtml:link rel="alternate" hreflang="be" href="https://xn--80adf2alcbbnn3n.xn--90ais/pra-praekt/" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.com/about/" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://heritavia.com/blog.html</loc>
-      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.com/blog.html" />
-      <xhtml:link rel="alternate" hreflang="ru" href="https://xn--80adf2alcbbnn3n.xn--90ais/ru/blog.html" />
-      <xhtml:link rel="alternate" hreflang="be" href="https://xn--80adf2alcbbnn3n.xn--90ais/blog.html" />
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.com/blog.html" />
+    <loc>https://heritavia.com/blog/</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.com/blog/" />
+      <xhtml:link rel="alternate" hreflang="ru" href="https://xn--80adf2alcbbnn3n.xn--90ais/ru/blog/" />
+      <xhtml:link rel="alternate" hreflang="be" href="https://xn--80adf2alcbbnn3n.xn--90ais/blog/" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.com/blog/" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://heritavia.com/blog-metrics-missing.html</loc>
-      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.com/blog-metrics-missing.html" />
-      <xhtml:link rel="alternate" hreflang="ru" href="https://xn--80adf2alcbbnn3n.xn--90ais/ru/blog-metrics-missing.html" />
-      <xhtml:link rel="alternate" hreflang="be" href="https://xn--80adf2alcbbnn3n.xn--90ais/blog-metrics-missing.html" />
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.com/blog-metrics-missing.html" />
+    <loc>https://heritavia.com/contact/</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.com/contact/" />
+      <xhtml:link rel="alternate" hreflang="ru" href="https://xn--80adf2alcbbnn3n.xn--90ais/ru/kontakty/" />
+      <xhtml:link rel="alternate" hreflang="be" href="https://xn--80adf2alcbbnn3n.xn--90ais/kantakty/" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.com/contact/" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://heritavia.com/blog-pokhozyaystvennye-knigi.html</loc>
-      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.com/blog-pokhozyaystvennye-knigi.html" />
-      <xhtml:link rel="alternate" hreflang="ru" href="https://xn--80adf2alcbbnn3n.xn--90ais/ru/blog-pokhozyaystvennye-knigi.html" />
-      <xhtml:link rel="alternate" hreflang="be" href="https://xn--80adf2alcbbnn3n.xn--90ais/blog-pokhozyaystvennye-knigi.html" />
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.com/blog-pokhozyaystvennye-knigi.html" />
+    <loc>https://heritavia.com/contact/start/</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.com/contact/start/" />
+      <xhtml:link rel="alternate" hreflang="ru" href="https://xn--80adf2alcbbnn3n.xn--90ais/ru/kontakty/start/" />
+      <xhtml:link rel="alternate" hreflang="be" href="https://xn--80adf2alcbbnn3n.xn--90ais/kantakty/start/" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.com/contact/start/" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://heritavia.com/forma-1-pasport-sssr-genealogy.html</loc>
-      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.com/forma-1-pasport-sssr-genealogy.html" />
-      <xhtml:link rel="alternate" hreflang="ru" href="https://xn--80adf2alcbbnn3n.xn--90ais/ru/forma-1-pasport-sssr-genealogy.html" />
-      <xhtml:link rel="alternate" hreflang="be" href="https://xn--80adf2alcbbnn3n.xn--90ais/forma-1-pasport-sssr-genealogy.html" />
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.com/forma-1-pasport-sssr-genealogy.html" />
+    <loc>https://heritavia.com/sitemap/</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.com/sitemap/" />
+      <xhtml:link rel="alternate" hreflang="ru" href="https://xn--80adf2alcbbnn3n.xn--90ais/ru/karta-sajta/" />
+      <xhtml:link rel="alternate" hreflang="be" href="https://xn--80adf2alcbbnn3n.xn--90ais/mapa-sajtu/" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.com/sitemap/" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://heritavia.com/sitemap.html</loc>
-      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.com/sitemap.html" />
-      <xhtml:link rel="alternate" hreflang="ru" href="https://xn--80adf2alcbbnn3n.xn--90ais/ru/sitemap.html" />
-      <xhtml:link rel="alternate" hreflang="be" href="https://xn--80adf2alcbbnn3n.xn--90ais/sitemap.html" />
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.com/sitemap.html" />
+    <loc>https://heritavia.com/blog/metrics-missing/</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.com/blog/metrics-missing/" />
+      <xhtml:link rel="alternate" hreflang="ru" href="https://xn--80adf2alcbbnn3n.xn--90ais/ru/blog/metrics-missing/" />
+      <xhtml:link rel="alternate" hreflang="be" href="https://xn--80adf2alcbbnn3n.xn--90ais/blog/metrics-missing/" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.com/blog/metrics-missing/" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://heritavia.com/contacts.html</loc>
-      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.com/contacts.html" />
-      <xhtml:link rel="alternate" hreflang="ru" href="https://xn--80adf2alcbbnn3n.xn--90ais/ru/contacts.html" />
-      <xhtml:link rel="alternate" hreflang="be" href="https://xn--80adf2alcbbnn3n.xn--90ais/contacts.html" />
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.com/contacts.html" />
+    <loc>https://heritavia.com/blog/household-books/</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.com/blog/household-books/" />
+      <xhtml:link rel="alternate" hreflang="ru" href="https://xn--80adf2alcbbnn3n.xn--90ais/ru/blog/pokhozyaystvennye-knigi/" />
+      <xhtml:link rel="alternate" hreflang="be" href="https://xn--80adf2alcbbnn3n.xn--90ais/blog/pakhaaspadarchyja-knigi/" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.com/blog/household-books/" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://heritavia.com/start.html</loc>
-      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.com/start.html" />
-      <xhtml:link rel="alternate" hreflang="ru" href="https://xn--80adf2alcbbnn3n.xn--90ais/ru/start.html" />
-      <xhtml:link rel="alternate" hreflang="be" href="https://xn--80adf2alcbbnn3n.xn--90ais/start.html" />
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.com/start.html" />
+    <loc>https://heritavia.com/blog/forma-1/</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.com/blog/forma-1/" />
+      <xhtml:link rel="alternate" hreflang="ru" href="https://xn--80adf2alcbbnn3n.xn--90ais/ru/blog/forma-1/" />
+      <xhtml:link rel="alternate" hreflang="be" href="https://xn--80adf2alcbbnn3n.xn--90ais/blog/forma-1/" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.com/blog/forma-1/" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

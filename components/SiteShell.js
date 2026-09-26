@@ -1,35 +1,38 @@
 import { Header } from './Header';
 import { Maps } from './Maps';
-import { BEL_ORIGIN, COM_ORIGIN } from '../lib/hosts';
-import { NAV, UI } from '../lib/i18n';
+import { LangSync } from './LangSync';
+import { absoluteUrl, pathFor, NAV_IDS } from '../lib/page-map';
+import { UI } from '../lib/i18n';
 
-function hrefs(locale, pageFile) {
-  const stem = pageFile === 'index.html' ? '' : pageFile;
-  const local = (file) => {
-    if (locale === 'ru') return file === 'index.html' ? '/ru/' : `/ru/${file}`;
-    return file === 'index.html' ? '/' : `/${file}`;
-  };
-  const other = (file, lang) => {
-    if (lang === 'en') return file === 'index.html' ? `${COM_ORIGIN}/` : `${COM_ORIGIN}/${file}`;
-    if (lang === 'ru') return file === 'index.html' ? `${BEL_ORIGIN}/ru/` : `${BEL_ORIGIN}/ru/${file}`;
-    return file === 'index.html' ? `${BEL_ORIGIN}/` : `${BEL_ORIGIN}/${file}`;
-  };
-  const page = (lang) => (lang === locale ? local(pageFile) : other(pageFile, lang));
+const LANG_LABELS = {
+  en: 'English',
+  ru: 'Русский',
+  be: 'Беларуская',
+};
+
+function langOrder(locale) {
+  if (locale === 'en') return ['en', 'ru', 'be'];
+  if (locale === 'ru') return ['ru', 'be', 'en'];
+  return ['be', 'ru', 'en'];
+}
+
+function hrefs(locale, pageId) {
+  const local = (id) => pathFor(id, locale);
+  const other = (id, lang) => (lang === locale ? local(id) : absoluteUrl(id, lang));
   return {
-    home: local('index.html'),
-    research: local('research.html'),
-    report: local('report.html'),
-    about: local('about.html'),
-    blog: local('blog.html'),
-    sitemap: local('sitemap.html'),
-    contacts: local('contacts.html'),
-    start: local('start.html'),
-    langs: [
-      { code: 'be', label: 'BE', href: page('be') },
-      { code: 'ru', label: 'RU', href: page('ru') },
-      { code: 'en', label: 'EN', href: page('en') },
-    ],
-    stem,
+    home: local('home'),
+    research: local('research'),
+    report: local('report'),
+    about: local('about'),
+    blog: local('blog'),
+    sitemap: local('sitemap'),
+    contacts: local('contacts'),
+    start: local('start'),
+    langs: langOrder(locale).map((code) => ({
+      code,
+      label: LANG_LABELS[code],
+      href: other(pageId || 'home', code),
+    })),
   };
 }
 
@@ -44,13 +47,14 @@ function instagram(locale) {
   return 'https://www.instagram.com/heritavia_genealogy/';
 }
 
-export function SiteShell({ locale, current, file, html }) {
+export function SiteShell({ locale, current, pageId = 'home', html }) {
   const t = UI[locale];
-  const links = hrefs(locale, file);
-  const nav = NAV.map((key) => ({ key, href: links[key], label: t[key] }));
+  const links = hrefs(locale, pageId);
+  const nav = NAV_IDS.map((key) => ({ key, href: links[key], label: t[key] }));
   const here = (key) => (current === key ? 'page' : undefined);
   return (
     <>
+      <LangSync locale={locale} />
       <Header t={t} links={nav} startHref={links.start} current={current} home={links.home} />
       <main dangerouslySetInnerHTML={{ __html: html }} />
       <footer className="site-footer">
