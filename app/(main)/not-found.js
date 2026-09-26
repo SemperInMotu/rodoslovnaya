@@ -1,6 +1,6 @@
-import { SiteShell } from '../components/SiteShell';
-import { rootLocale } from '../lib/site-mode';
-import { pathFor } from '../lib/page-map';
+import { SiteShell } from '../../components/SiteShell';
+import { rootLocale } from '../../lib/site-mode';
+import { pathFor } from '../../lib/page-map';
 
 const COPY = {
   en: {

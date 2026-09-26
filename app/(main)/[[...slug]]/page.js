@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
-import { SiteShell } from '../../components/SiteShell';
-import { listSlugParams, loadPage } from '../../lib/content';
-import { rootLocale } from '../../lib/site-mode';
+import { SiteShell } from '../../../components/SiteShell';
+import { listSlugParams, loadPage } from '../../../lib/content';
+import { rootLocale } from '../../../lib/site-mode';
 
 export const dynamicParams = false;
 

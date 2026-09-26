@@ -1,10 +1,10 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useLayoutEffect } from 'react';
 import { UI } from '../lib/i18n';
 
 export function LangSync({ locale }) {
-  useEffect(() => {
+  useLayoutEffect(() => {
     const lang = UI[locale]?.htmlLang || locale;
     document.documentElement.lang = lang;
   }, [locale]);
