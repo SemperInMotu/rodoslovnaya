@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Host: xn--80adf2alcbbnn3n.xn--90ais
+Sitemap: https://xn--80adf2alcbbnn3n.xn--90ais/sitemap.xml
