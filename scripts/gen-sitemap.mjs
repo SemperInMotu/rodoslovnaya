@@ -1,7 +1,7 @@
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { PAGES, absoluteUrl, alternatesFor } from '../lib/page-map.js';
+import { PAGES, absoluteUrl, alternatesFor, localesFor } from '../lib/page-map.js';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -29,16 +29,18 @@ function wrap(entries) {
   ].join('\n');
 }
 
-const enEntries = Object.keys(PAGES).map((id) =>
-  urlEntry(absoluteUrl(id, 'en'), id, id === 'home' ? '1.0' : '0.7'),
-);
+const enEntries = Object.keys(PAGES)
+  .filter((id) => localesFor(id).includes('en'))
+  .map((id) => urlEntry(absoluteUrl(id, 'en'), id, id === 'home' ? '1.0' : '0.7'));
 writeFileSync(resolve(root, 'public/sitemap.xml'), wrap(enEntries), 'utf8');
 console.log(`public/sitemap.xml — ${enEntries.length} EN urls`);
 
 const belEntries = [];
 for (const id of Object.keys(PAGES)) {
-  belEntries.push(urlEntry(absoluteUrl(id, 'be'), id, id === 'home' ? '1.0' : '0.7'));
-  belEntries.push(urlEntry(absoluteUrl(id, 'ru'), id, id === 'home' ? '1.0' : '0.7'));
+  const locales = localesFor(id);
+  const priority = id === 'home' ? '1.0' : '0.7';
+  if (locales.includes('be')) belEntries.push(urlEntry(absoluteUrl(id, 'be'), id, priority));
+  if (locales.includes('ru')) belEntries.push(urlEntry(absoluteUrl(id, 'ru'), id, priority));
 }
 mkdirSync(resolve(root, 'public'), { recursive: true });
 writeFileSync(resolve(root, 'public/sitemap-bel.xml'), wrap(belEntries), 'utf8');

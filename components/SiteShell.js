@@ -1,7 +1,7 @@
 import { Header } from './Header';
 import { Maps } from './Maps';
 import { LangSync } from './LangSync';
-import { absoluteUrl, pathFor, NAV_IDS } from '../lib/page-map';
+import { absoluteUrl, pathFor, NAV_IDS, localesFor } from '../lib/page-map';
 import { UI } from '../lib/i18n';
 
 const LANG_LABELS = {
@@ -28,12 +28,14 @@ function hrefs(locale, pageId) {
     sitemap: local('sitemap'),
     contacts: local('contacts'),
     start: local('start'),
-    langs: langOrder(locale).map((code) => ({
-      code,
-      short: LANG_LABELS[code].short,
-      label: LANG_LABELS[code].label,
-      href: other(pageId || 'home', code),
-    })),
+    langs: langOrder(locale)
+      .filter((code) => localesFor(pageId || 'home').includes(code))
+      .map((code) => ({
+        code,
+        short: LANG_LABELS[code].short,
+        label: LANG_LABELS[code].label,
+        href: other(pageId || 'home', code),
+      })),
   };
 }
 
