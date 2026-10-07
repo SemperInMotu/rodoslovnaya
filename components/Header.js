@@ -16,7 +16,7 @@ export function Header({ t, links, startHref, current, home, langs = [], locale 
               {item.label}
             </a>
           ))}
-          <a className="nav-cta" href={startHref} aria-current={current === 'start' ? 'page' : undefined}>
+          <a className="nav-cta" href={startHref} aria-current={current === 'onboarding' ? 'page' : undefined}>
             {t.start}
           </a>
         </nav>

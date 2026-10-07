@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<title>Заказать исследование — Heritavia</title>
+<meta name="description" content="Заявка Heritavia: экспертиза одной ветки или полное исследование. Цена после оценки, в белорусских рублях." />
+</head>
+<body>
+<main>
+
+<section class="page-hero heritage">
+  <div class="wrap" style="max-width:720px">
+    <div class="eyebrow heritage">Heritavia</div>
+    <h1>Заказать исследование</h1>
+    <p class="lead">Если самостоятельный поиск упёрся, заявку на русском языке принимает Heritavia. Две формы работы. Цена — после оценки, в белорусских рублях. Глубину заранее не называем.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="grid-2">
+      <article class="panel featured" id="vetka">
+        <p class="eyebrow heritage">Одна линия</p>
+        <h2>Экспертиза одной ветки</h2>
+        <p>Одна согласованная линия, которую вы можете назвать: фамилия, местность и вопрос именно по ней. Подходит, если остальное дерево пока не нужно.</p>
+        <p class="muted">Цена: после оценки, в белорусских рублях.</p>
+        <p style="margin-top:0.8rem"><a class="btn btn-heritage" href="/ru/zakaz/?v=branch#forma">Выбрать одну ветку</a></p>
+      </article>
+      <article class="panel" id="polnoe">
+        <p class="eyebrow heritage">Несколько линий</p>
+        <h2>Полное исследование</h2>
+        <p>Несколько веток, объём которых вы описываете в заявке. Это не фиксированный набор «всех предков» и не обещание довести каждую линию до одного и того же времени.</p>
+        <p class="muted">Цена: после оценки, в белорусских рублях.</p>
+        <p style="margin-top:0.8rem"><a class="btn btn-line" href="/ru/zakaz/?v=full#forma">Выбрать полное исследование</a></p>
+      </article>
+    </div>
+    <p class="fine" style="margin-top:1rem">Как может выглядеть сдача специалиста, отдельно от этой заявки: <a href="/ru/otchet/">живой отчёт</a>. Английская витрина услуги — на heritavia.com, здесь её нет.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap" style="max-width:640px">
+    <h2>Заявка</h2>
+    
+<form class="panel lead-form" id="forma" action="https://api.web3forms.com/submit" method="POST">
+  <p class="form-status" data-order-sent hidden>Заявка ушла. Ответ придёт на email, который вы указали. Если письма нет, проверьте спам.</p>
+  <input type="hidden" name="access_key" value="bfb3a2dd-b595-4f9b-9773-a076f735d73d" />
+  <input type="hidden" name="from_name" value="Heritavia" />
+  <input type="hidden" name="topic" value="bel-soft-order" />
+  <input type="hidden" name="subject" value="Heritavia — заявка с родословная.бел" />
+  <input type="hidden" name="redirect" value="https://xn--80adf2alcbbnn3n.xn--90ais/ru/zakaz/?sent=1" />
+  <input type="hidden" name="language" value="ru" />
+  <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true" />
+  <fieldset>
+    <legend>Что нужно</legend>
+    <div class="choice-list">
+      <label class="choice"><input type="radio" name="service" data-v="branch" value="Экспертиза одной ветки" required checked /><span><strong>Экспертиза одной ветки</strong><small>Одна линия, которую можете назвать.</small></span></label>
+      <label class="choice"><input type="radio" name="service" data-v="full" value="Полное исследование" required /><span><strong>Полное исследование</strong><small>Несколько веток, объём в заявке.</small></span></label>
+    </div>
+  </fieldset>
+  <label for="name">Имя</label>
+  <input id="name" name="name" required autocomplete="name" />
+  <label for="email">Email</label>
+  <input id="email" name="email" type="email" required autocomplete="email" />
+  <label for="telegram">Telegram, если так удобнее</label>
+  <input id="telegram" name="telegram" autocomplete="off" />
+  <label for="line">Для одной ветки: какая именно линия</label>
+  <input id="line" name="line" placeholder="отец отца, фамилия, деревня" />
+  <label for="known_person">Самый дальний человек на этой линии, которого можете назвать</label>
+  <input id="known_person" name="known_person" />
+  <label for="branches">Для полного исследования: какие ветки включить</label>
+  <textarea id="branches" name="branches" placeholder="например, обе стороны дедов по отцу и мать матери"></textarea>
+  <label for="scope_note">Что для вас значит «полное» — своими словами</label>
+  <textarea id="scope_note" name="scope_note" placeholder="не список поколений, а зачем вам этот объём"></textarea>
+  <label for="geography">География</label>
+  <input id="geography" name="geography" placeholder="область, район, деревня, если знаете" />
+  <label for="surnames">Фамилии и имена, как слышали</label>
+  <input id="surnames" name="surnames" />
+  <label for="assets">Что уже есть на руках</label>
+  <textarea id="assets" name="assets" placeholder="свидетельства, сканы, устные рассказы, ДНК"></textarea>
+  <label for="stuck">Где поиск остановился</label>
+  <textarea id="stuck" name="stuck"></textarea>
+  <label for="message">Комментарий</label>
+  <textarea id="message" name="message"></textarea>
+  <div class="form-actions">
+    <button class="btn btn-heritage" type="submit">Отправить заявку</button>
+  </div>
+  <p class="form-note fine">Пишем только по сути заявки. Оплаты на этой странице нет: сначала ответ и оценка. Если выбрали одну ветку, заполните поля про линию. Если полное — поля про ветки. Остальное общее.</p>
+</form>
+
+  </div>
+</section>
+<section class="section">
+  <div class="wrap" style="max-width:720px">
+    <h2>Перед тем как отправить</h2>
+    <div class="faq">
+      <details>
+        <summary>Нужно ли знать архив и шифр фонда?</summary>
+        <p>Нет. Достаточно того, что уже знаете: имена, местность, что лежит дома и где остановились.</p>
+      </details>
+      <details>
+        <summary>Что будет после заявки?</summary>
+        <p>Ответ и оценка в белорусских рублях. Договора и оплаты на этой странице нет.</p>
+      </details>
+      <details>
+        <summary>Можно ли продолжать самому?</summary>
+        <p>Да. База знаний остаётся открытой: <a href="/ru/s-chego-nachat/">с чего начать</a>.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+</main>
+</body>
+</html>

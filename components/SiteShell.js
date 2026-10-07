@@ -1,7 +1,8 @@
 import { Header } from './Header';
 import { Maps } from './Maps';
 import { LangSync } from './LangSync';
-import { absoluteUrl, pathFor, NAV_IDS, localesFor } from '../lib/page-map';
+import { pathFor, switchHref, NAV_IDS } from '../lib/page-map';
+import { OrderFormPrefill } from './OrderFormPrefill';
 import { UI } from '../lib/i18n';
 
 const LANG_LABELS = {
@@ -18,24 +19,23 @@ function langOrder(locale) {
 
 function hrefs(locale, pageId) {
   const local = (id) => pathFor(id, locale);
-  const other = (id, lang) => (lang === locale ? local(id) : absoluteUrl(id, lang));
+  const id = pageId || 'home';
   return {
     home: local('home'),
-    research: local('research'),
-    report: local('report'),
+    onboarding: local('onboarding'),
+    sources: local('sources'),
+    method: local('method'),
     about: local('about'),
-    blog: local('blog'),
-    sitemap: local('sitemap'),
     contacts: local('contacts'),
-    start: local('start'),
-    langs: langOrder(locale)
-      .filter((code) => localesFor(pageId || 'home').includes(code))
-      .map((code) => ({
-        code,
-        short: LANG_LABELS[code].short,
-        label: LANG_LABELS[code].label,
-        href: other(pageId || 'home', code),
-      })),
+    sitemap: local('sitemap'),
+    start: local('onboarding'),
+    order: local('order'),
+    langs: langOrder(locale).map((code) => ({
+      code,
+      short: LANG_LABELS[code].short,
+      label: LANG_LABELS[code].label,
+      href: code === locale ? local(id) : switchHref(id, code, locale),
+    })),
   };
 }
 
@@ -58,6 +58,7 @@ export function SiteShell({ locale, current, pageId = 'home', html }) {
   return (
     <>
       <LangSync locale={locale} />
+      <OrderFormPrefill />
       <Header
         t={t}
         links={nav}
@@ -97,8 +98,8 @@ export function SiteShell({ locale, current, pageId = 'home', html }) {
                   </a>
                 </li>
                 <li>
-                  <a href={links.start} aria-current={here('start')}>
-                    {t.start}
+                  <a href={links.order} aria-current={here('order')}>
+                    {t.bridge}
                   </a>
                 </li>
               </ul>
@@ -120,7 +121,7 @@ export function SiteShell({ locale, current, pageId = 'home', html }) {
                   </a>
                 </li>
                 <li>
-                  <a href={links.start}>{t.formLink}</a>
+                  <a href={links.order}>{t.formLink}</a>
                 </li>
                 <li>
                   <a href={author(locale)}>{t.author}</a>

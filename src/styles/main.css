@@ -797,6 +797,52 @@ textarea {
   display: none;
 }
 
+.lead-form fieldset {
+  border: 0;
+  margin: 0.9rem 0 0;
+  padding: 0;
+}
+
+.lead-form legend {
+  padding: 0;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.choice-list {
+  display: grid;
+  gap: 0.55rem;
+  margin-top: 0.45rem;
+}
+
+.choice {
+  display: flex;
+  gap: 0.65rem;
+  align-items: flex-start;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--mist);
+  font-weight: 400;
+  color: var(--ink);
+}
+
+.choice input {
+  width: auto;
+  margin-top: 0.2rem;
+}
+
+.choice span {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.choice small {
+  color: var(--muted);
+  font-weight: 400;
+}
+
 /* ——— Journal / work ——— */
 .post-list {
   display: grid;

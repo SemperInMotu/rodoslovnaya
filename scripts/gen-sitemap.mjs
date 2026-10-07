@@ -29,14 +29,17 @@ function wrap(entries) {
   ].join('\n');
 }
 
+const published = (id) => !PAGES[id].noindex;
+
 const enEntries = Object.keys(PAGES)
-  .filter((id) => localesFor(id).includes('en'))
+  .filter((id) => published(id) && localesFor(id).includes('en'))
   .map((id) => urlEntry(absoluteUrl(id, 'en'), id, id === 'home' ? '1.0' : '0.7'));
 writeFileSync(resolve(root, 'public/sitemap.xml'), wrap(enEntries), 'utf8');
 console.log(`public/sitemap.xml — ${enEntries.length} EN urls`);
 
 const belEntries = [];
 for (const id of Object.keys(PAGES)) {
+  if (!published(id)) continue;
   const locales = localesFor(id);
   const priority = id === 'home' ? '1.0' : '0.7';
   if (locales.includes('be')) belEntries.push(urlEntry(absoluteUrl(id, 'be'), id, priority));
