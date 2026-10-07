@@ -4,7 +4,7 @@
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { LEGACY_TO_ID, pathFor, absoluteUrl } from '../lib/page-map.js';
+import { LEGACY_TO_ID, PAGES, pathFor, absoluteUrl } from '../lib/page-map.js';
 import { isCom } from '../lib/site-mode.js';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -36,6 +36,7 @@ function write(rel, html) {
 
 if (isCom) {
   for (const [legacy, id] of Object.entries(LEGACY_TO_ID)) {
+    if (!PAGES[id].en) continue;
     const target = pathFor(id, 'en');
     write(legacy, stub(target, absoluteUrl(id, 'en'), 'en'));
     write(`en/${legacy}`, stub(target, absoluteUrl(id, 'en'), 'en'));

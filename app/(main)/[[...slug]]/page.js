@@ -18,10 +18,9 @@ export async function generateMetadata({ params }) {
     description: page.description,
     alternates: {
       canonical: page.canonical,
-      languages: Object.fromEntries(
-        page.alternates.filter((a) => a.hreflang !== 'x-default').map((a) => [a.hreflang, a.href]),
-      ),
+      languages: Object.fromEntries(page.alternates.map((a) => [a.hreflang, a.href])),
     },
+    robots: page.noindex ? { index: false, follow: true } : undefined,
   };
 }
 
