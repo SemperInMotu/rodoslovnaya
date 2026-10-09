@@ -181,6 +181,22 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://xn--80adf2alcbbnn3n.xn--90ais/blog/spisy-vybarchau-1935-1938/</loc>
+      <xhtml:link rel="alternate" hreflang="ru" href="https://xn--80adf2alcbbnn3n.xn--90ais/ru/blog/spiski-izbirateley-1935-1938/" />
+      <xhtml:link rel="alternate" hreflang="be" href="https://xn--80adf2alcbbnn3n.xn--90ais/blog/spisy-vybarchau-1935-1938/" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://xn--80adf2alcbbnn3n.xn--90ais/ru/blog/spiski-izbirateley-1935-1938/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://xn--80adf2alcbbnn3n.xn--90ais/ru/blog/spiski-izbirateley-1935-1938/</loc>
+      <xhtml:link rel="alternate" hreflang="ru" href="https://xn--80adf2alcbbnn3n.xn--90ais/ru/blog/spiski-izbirateley-1935-1938/" />
+      <xhtml:link rel="alternate" hreflang="be" href="https://xn--80adf2alcbbnn3n.xn--90ais/blog/spisy-vybarchau-1935-1938/" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://xn--80adf2alcbbnn3n.xn--90ais/ru/blog/spiski-izbirateley-1935-1938/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://xn--80adf2alcbbnn3n.xn--90ais/blog/forma-1/</loc>
       <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.com/blog/forma-1/" />
       <xhtml:link rel="alternate" hreflang="ru" href="https://xn--80adf2alcbbnn3n.xn--90ais/ru/blog/forma-1/" />
@@ -267,6 +283,24 @@
       <xhtml:link rel="alternate" hreflang="ru" href="https://xn--80adf2alcbbnn3n.xn--90ais/ru/blog/gedmatch/ancestor-projects/" />
       <xhtml:link rel="alternate" hreflang="be" href="https://xn--80adf2alcbbnn3n.xn--90ais/blog/gedmatch/ancestor-projects/" />
       <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.com/blog/gedmatch/ancestor-projects/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://xn--80adf2alcbbnn3n.xn--90ais/blog/gedmatch/vybar-praekta/</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.com/blog/gedmatch/which-project/" />
+      <xhtml:link rel="alternate" hreflang="ru" href="https://xn--80adf2alcbbnn3n.xn--90ais/ru/blog/gedmatch/vybor-proekta/" />
+      <xhtml:link rel="alternate" hreflang="be" href="https://xn--80adf2alcbbnn3n.xn--90ais/blog/gedmatch/vybar-praekta/" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.com/blog/gedmatch/which-project/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://xn--80adf2alcbbnn3n.xn--90ais/ru/blog/gedmatch/vybor-proekta/</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.com/blog/gedmatch/which-project/" />
+      <xhtml:link rel="alternate" hreflang="ru" href="https://xn--80adf2alcbbnn3n.xn--90ais/ru/blog/gedmatch/vybor-proekta/" />
+      <xhtml:link rel="alternate" hreflang="be" href="https://xn--80adf2alcbbnn3n.xn--90ais/blog/gedmatch/vybar-praekta/" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.com/blog/gedmatch/which-project/" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

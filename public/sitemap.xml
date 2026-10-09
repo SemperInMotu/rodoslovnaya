@@ -136,6 +136,15 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://heritavia.com/blog/gedmatch/which-project/</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.com/blog/gedmatch/which-project/" />
+      <xhtml:link rel="alternate" hreflang="ru" href="https://xn--80adf2alcbbnn3n.xn--90ais/ru/blog/gedmatch/vybor-proekta/" />
+      <xhtml:link rel="alternate" hreflang="be" href="https://xn--80adf2alcbbnn3n.xn--90ais/blog/gedmatch/vybar-praekta/" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.com/blog/gedmatch/which-project/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://heritavia.com/blog/gedmatch/matches/</loc>
       <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.com/blog/gedmatch/matches/" />
       <xhtml:link rel="alternate" hreflang="ru" href="https://xn--80adf2alcbbnn3n.xn--90ais/ru/blog/gedmatch/sovpadeniya/" />
