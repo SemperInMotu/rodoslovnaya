@@ -2,6 +2,8 @@ import { Header } from './Header';
 import { Maps } from './Maps';
 import { LangSync } from './LangSync';
 import { absoluteUrl, pathFor, NAV_IDS, localesFor } from '../lib/page-map';
+import { BEL_ORIGIN, COM_ORIGIN } from '../lib/hosts';
+import { isCom } from '../lib/site-mode';
 import { UI } from '../lib/i18n';
 
 const LANG_LABELS = {
@@ -68,6 +70,11 @@ export function SiteShell({ locale, current, pageId = 'home', html }) {
         locale={locale}
       />
       <main dangerouslySetInnerHTML={{ __html: html }} />
+      {current !== 'start' && (
+        <a className="sticky-cta" href={links.start}>
+          {t.stickyCta}
+        </a>
+      )}
       <footer className="site-footer">
         <div className="wrap">
           <div className="footer-grid">
@@ -128,6 +135,19 @@ export function SiteShell({ locale, current, pageId = 'home', html }) {
               </ul>
             </div>
           </div>
+          <p className="footer-hosts fine">
+            {isCom || locale === 'en' ? (
+              <>
+                Heritavia · {t.hostEnglish} · {t.hostRuBe}:{' '}
+                <a href={`${BEL_ORIGIN}/ru/`}>родословная.бел</a>
+              </>
+            ) : (
+              <>
+                Heritavia · родословная.бел — {t.hostLocal} · {t.hostEnglish}:{' '}
+                <a href={`${COM_ORIGIN}/`}>heritavia.com</a>
+              </>
+            )}
+          </p>
           <div className="footer-bottom">
             <span>© {new Date().getFullYear()} Heritavia</span>
             <span>{t.unp}</span>

@@ -59,32 +59,25 @@
             <label for="name">Имя</label>
             <input id="name" name="name" required autocomplete="name" />
 
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" required autocomplete="email" />
+            <label for="email">Email или Telegram</label>
+            <input id="email" name="email" required autocomplete="email" placeholder="you@mail.com или @username" />
 
-            <label for="geography">География корней</label>
-            <input id="geography" name="geography" placeholder="Беларусь / Полесье / …" />
-
-            <label for="surnames">Известные фамилии</label>
-            <input id="surnames" name="surnames" />
+            <label for="surnames">Фамилии / география</label>
+            <input id="surnames" name="surnames" placeholder="Корзун, Воложин / Полесье…" />
 
             <label for="goal">Цель</label>
             <select id="goal" name="goal">
+              <option value="strategy">Стратегия поиска (1000 BYN)</option>
               <option value="line">Одна линия</option>
               <option value="family">История семьи</option>
               <option value="gift">Подарок</option>
-              <option value="strategy">Пока только стратегия</option>
             </select>
 
-            <label for="assets">Что уже есть</label>
-            <textarea id="assets" name="assets" placeholder="GEDCOM / ДНК / сканы / устные истории"></textarea>
-
-            <label for="message">Комментарий</label>
-            <textarea id="message" name="message"></textarea>
+            <label for="message">Кратко о задаче <span class="fine">(необязательно)</span></label>
+            <textarea id="message" name="message" rows="3" placeholder="Что уже пробовали, что важно найти"></textarea>
 
             <div class="form-actions">
               <button class="btn btn-heritage" type="submit">Отправить заявку</button>
-              
             </div>
             <p class="form-note fine">
               Пишем только по делу заявки.

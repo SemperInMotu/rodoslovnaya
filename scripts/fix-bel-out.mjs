@@ -28,3 +28,25 @@ if (existsSync(belRobots)) {
   writeFileSync(robots, readFileSync(belRobots));
   console.log('out/robots.txt ← robots-bel.txt');
 }
+
+/* RU default: / → /ru/; BE home lives at /be/ */
+const rootIndex = resolve(out, 'index.html');
+writeFileSync(
+  rootIndex,
+  `<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="refresh" content="0;url=/ru/" />
+    <link rel="canonical" href="https://xn--80adf2alcbbnn3n.xn--90ais/ru/" />
+    <title>Heritavia</title>
+    <script>location.replace('/ru/');</script>
+  </head>
+  <body>
+    <p><a href="/ru/">Продолжить</a></p>
+  </body>
+</html>
+`,
+  'utf8',
+);
+console.log('out/index.html → redirect /ru/');
